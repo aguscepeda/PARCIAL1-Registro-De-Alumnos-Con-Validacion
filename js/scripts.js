@@ -66,6 +66,11 @@ form.addEventListener("submit", function(e) {
     curso: curso
   };
 
+  if (!nombre || !apellido || !curso) {
+    document.getElementById("mensajeError").textContent = "Todos los campos son obligatorios.";
+    return;
+  }
+
   //guardar en array
   alumnos.push(alumno);
 
