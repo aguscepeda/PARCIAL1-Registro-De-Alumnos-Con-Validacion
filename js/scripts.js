@@ -58,15 +58,48 @@ form.addEventListener("submit", function(e) {
   const edad = document.getElementById("edad").value;
   const curso = document.getElementById("curso").value;
 
-  //crear objeto alumno
+
+  // validacion para que obligatoriamente se llenen todos los campos
+  if (!nombre || !apellido || !curso) {
+    document.getElementById("mensajeError").textContent = "Todos los campos son obligatorios.";
+    return;
+  }
+
+//validacion para que en nombre no se pueda poner un numero
+  for (let i = 0; i < nombre.length; i++) {
+    if (!isNaN(nombre[i]) && nombre[i] !== " ") {
+      document.getElementById("mensajeError").textContent =  "El nombre no puede contener números.";
+        return;
+    }
+}
+
+//validacion para que en apellido no se pueda poner un numero
+for (let i = 0; i < apellido.length; i++) {
+    if (!isNaN(apellido[i]) && apellido[i] !== " ") {
+        document.getElementById("mensajeError").textContent = "El apellido no puede contener números.";
+        return;
+    }
+}
+
+// validacion para que la edad sea solo un numero, una edad real y que no este vacio.
+  const edadNum = Number(edad);
+  if (!edad || isNaN(edadNum) || !Number.isInteger(edadNum) || edadNum < 1 || edadNum > 120) {
+    document.getElementById("mensajeError").textContent = "La edad debe ser un número entero entre 1 y 120.";
+    return;
+  }
+
+  //limpia el mensaje de error, si el usuario ingreso todo bien.
+document.getElementById("mensajeError").textContent = "";
+
+ //crear objeto alumno
   const alumno = {
     nombre: nombre,
     apellido: apellido,
-    edad: edad,
+    edad: edadNum,
     curso: curso
   };
 
-  //guardar en array
+  //guardar en array  
   alumnos.push(alumno);
 
   //guardar en localStorage
