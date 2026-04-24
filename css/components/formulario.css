@@ -1,0 +1,57 @@
+/* FORMULARIO */
+#formularioRegistro {
+    background-color: #141414;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+label {
+    font-size: 0.78rem;
+    color: #888888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input {
+    background-color: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #1a6bff;
+}
+
+input::placeholder {
+    color: #3a3a3a;
+}
+
+/* BOTÓN REGISTRAR */
+button[type="submit"] {
+    background-color: #1a6bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0055dd;
+}

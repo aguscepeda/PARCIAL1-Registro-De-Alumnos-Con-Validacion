@@ -1,0 +1,8 @@
+/* VALIDACIÓN */
+input.input-error {
+    border-color: #ff3b3b;
+}
+
+input.input-ok {
+    border-color: #00c853;
+}
