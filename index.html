@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Alumnos - PARCIAL 1</title>
-    <link rel="stylesheet" href="css/components/index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components/formulario.css">
+    <link rel="stylesheet" href="css/components/tabla.css">
+    <link rel="stylesheet" href="css/components/validacion.css">
     <link rel="icon" type="image/x-icon" href="../assets/favicon/formularioFavIcon.png">
 </head>
 <body>
     <h1>Registro de Alumnos</h1>  
 
-    <form id="formularioRegistro"> 
+    <form id="formularioRegistro" novalidate> 
         <label for="nombre">Nombre:</label>
         <input id="nombre" type="text" placeholder="Juan" required>
 
@@ -24,7 +27,10 @@
         <input id="curso" type="text" placeholder="3-A" required>
 
         <button type="submit">Registrar</button>
+
     </form>
+
+    <p id="mensajeError" style="color: red;"></p>
 
     <p>Total alumnos: <span id="totalAlumnos">0</span></p> 
     <br><br>
